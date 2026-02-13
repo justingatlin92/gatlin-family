@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-navy: #1B2A4A;
+  --color-navy-light: #2A3F6A;
+  --color-navy-dark: #111D33;
+  --color-gold: #C9A84C;
+  --color-gold-light: #D4BC72;
+  --color-gold-dark: #A8893A;
+  --color-cream: #FAF7F2;
+  --color-cream-dark: #F0EBE1;
+  --color-warm-gray: #4A4A4A;
+  --color-warm-gray-light: #6B6B6B;
+
+  --font-heading: 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-warm-gray);
+  background-color: var(--color-cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}

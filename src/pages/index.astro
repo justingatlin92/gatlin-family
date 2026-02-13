@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home">
+  <!-- Hero Section -->
+  <section class="relative bg-navy text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <!-- Photo -->
+        <div class="flex-shrink-0">
+          <img
+            src="/images/JustinAndColleen.jpg"
+            alt="Justin and Colleen Gatlin"
+            class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-gold shadow-xl"
+          />
+        </div>
+
+        <!-- Text -->
+        <div class="text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
+            Justin Gatlin
+          </h1>
+          <p class="text-xl md:text-2xl text-gold-light mb-6">
+            Pastor &middot; Author &middot; Teacher
+          </p>
+          <p class="text-lg text-gray-300 max-w-xl mb-8 leading-relaxed">
+            Serving as pastor at Alvin Missionary Baptist Church, writing to help others understand Scripture and Christian history, and teaching God's Word through every medium available.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="/books" class="inline-block bg-gold hover:bg-gold-dark text-navy-dark font-semibold px-6 py-3 rounded-lg transition-colors text-center">
+              Explore My Books
+            </a>
+            <a href="/about" class="inline-block border-2 border-gold text-gold hover:bg-gold hover:text-navy-dark font-semibold px-6 py-3 rounded-lg transition-colors text-center">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Books Preview -->
+  <section class="py-16 bg-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-heading font-bold text-center mb-12 text-navy">Published Works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Book 1 -->
+        <a href="https://www.amazon.com/Journey-through-Old-Testament-Understanding-ebook/dp/B09JT5SVNN/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col items-center p-8">
+          <img
+            src="/images/JourneyCover.jpg"
+            alt="Journey Through the Old Testament book cover"
+            class="w-48 h-auto rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 mb-6"
+          />
+          <h3 class="text-lg font-heading font-bold text-navy group-hover:text-gold-dark transition-colors text-center">
+            Journey Through the Old Testament
+          </h3>
+          <p class="text-sm text-warm-gray-light mt-2 text-center">
+            Understanding the Purpose, Themes, and Practical Implications of Each Old Testament Book
+          </p>
+        </a>
+
+        <!-- Book 2 -->
+        <a href="https://www.amazon.com/Brief-Walk-through-Christian-History-ebook/dp/B0BWZZ9QLB/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col items-center p-8">
+          <img
+            src="/images/HistoryCover.jpg"
+            alt="A Brief Walk Through Christian History book cover"
+            class="w-48 h-auto rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 mb-6"
+          />
+          <h3 class="text-lg font-heading font-bold text-navy group-hover:text-gold-dark transition-colors text-center">
+            A Brief Walk Through Christian History
+          </h3>
+          <p class="text-sm text-warm-gray-light mt-2 text-center">
+            Discover the People, Movements, and Ideas That Transformed Our World
+          </p>
+        </a>
+      </div>
+      <div class="text-center mt-10">
+        <a href="/books" class="text-gold-dark hover:text-navy font-semibold transition-colors">
+          View all books &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest from the Blog Preview -->
+  <section class="py-16 bg-cream-dark">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-heading font-bold mb-6 text-navy">From the Blog</h2>
+      <p class="text-warm-gray-light mb-8 max-w-2xl mx-auto">
+        Thoughts on faith, ministry, Scripture, and the Christian life.
+      </p>
+      <a href="/blog" class="inline-block bg-navy hover:bg-navy-light text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+        Read the Blog
+      </a>
+    </div>
+  </section>
+
+  <!-- Connect Section -->
+  <section class="py-16 bg-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-heading font-bold text-center mb-12 text-navy">Connect</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@justgat" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6 text-center">
+          <div class="w-14 h-14 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+            <svg class="w-7 h-7 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-navy mb-1">YouTube</h3>
+          <p class="text-sm text-warm-gray-light">Sermons, Teaching &amp; Logos Training</p>
+        </a>
+
+        <!-- Logos -->
+        <a href="https://logos.sjv.io/c/5786300/2524153/26054?u=https://www.logos.com/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6 text-center">
+          <div class="w-14 h-14 mx-auto mb-4 bg-indigo-100 rounded-full flex items-center justify-center">
+            <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25A2.25 2.25 0 0 1 5.25 3h13.5A2.25 2.25 0 0 1 21 5.25Z" /></svg>
+          </div>
+          <h3 class="font-heading font-bold text-navy mb-1">Logos Bible Software</h3>
+          <p class="text-sm text-warm-gray-light">The tool I use &amp; recommend</p>
+        </a>
+
+        <!-- Church -->
+        <a href="https://alvinmbc.com" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6 text-center">
+          <div class="w-14 h-14 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21" /></svg>
+          </div>
+          <h3 class="font-heading font-bold text-navy mb-1">Alvin MBC</h3>
+          <p class="text-sm text-warm-gray-light">Together We Serve for the Glory of God</p>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:justin@alvinmbc.com" class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6 text-center">
+          <div class="w-14 h-14 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
+            <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+          </div>
+          <h3 class="font-heading font-bold text-navy mb-1">Email</h3>
+          <p class="text-sm text-warm-gray-light">justin@alvinmbc.com</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

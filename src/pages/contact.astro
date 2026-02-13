@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" description="Get in touch with Justin Gatlin.">
+  <!-- Page Header -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-heading font-bold text-white mb-4">Contact</h1>
+      <p class="text-gold-light text-lg">I'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="py-16 bg-cream">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-8">
+        <!-- Email -->
+        <div class="bg-white rounded-xl shadow-md p-8 flex items-start gap-5">
+          <div class="w-14 h-14 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-heading font-bold text-navy mb-2">Email</h2>
+            <p class="text-warm-gray mb-3">The best way to reach me directly.</p>
+            <a href="mailto:justin@alvinmbc.com" class="text-gold-dark hover:text-navy font-semibold transition-colors text-lg">
+              justin@alvinmbc.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Church -->
+        <div class="bg-white rounded-xl shadow-md p-8 flex items-start gap-5">
+          <div class="w-14 h-14 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21" /></svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-heading font-bold text-navy mb-2">Alvin Missionary Baptist Church</h2>
+            <p class="text-warm-gray mb-3">Together We Serve for the Glory of God.</p>
+            <a href="https://alvinmbc.com" target="_blank" rel="noopener noreferrer" class="text-gold-dark hover:text-navy font-semibold transition-colors text-lg">
+              alvinmbc.com
+            </a>
+          </div>
+        </div>
+
+        <!-- YouTube -->
+        <div class="bg-white rounded-xl shadow-md p-8 flex items-start gap-5">
+          <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-heading font-bold text-navy mb-2">YouTube</h2>
+            <p class="text-warm-gray mb-3">Sermons, teaching, and Logos Bible Software training.</p>
+            <a href="https://www.youtube.com/@justgat" target="_blank" rel="noopener noreferrer" class="text-gold-dark hover:text-navy font-semibold transition-colors text-lg">
+              @justgat
+            </a>
+          </div>
+        </div>
+
+        <!-- Logos Bible Software -->
+        <div class="bg-white rounded-xl shadow-md p-8 flex items-start gap-5">
+          <div class="w-14 h-14 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25A2.25 2.25 0 0 1 5.25 3h13.5A2.25 2.25 0 0 1 21 5.25Z" /></svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-heading font-bold text-navy mb-2">Logos Bible Software</h2>
+            <p class="text-warm-gray mb-3">The Bible study tool I use and recommend. Check out my training videos on YouTube.</p>
+            <a href="https://logos.sjv.io/c/5786300/2524153/26054?u=https://www.logos.com/" target="_blank" rel="noopener noreferrer" class="text-gold-dark hover:text-navy font-semibold transition-colors text-lg">
+              Explore Logos &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Books -->
+        <div class="bg-white rounded-xl shadow-md p-8 flex items-start gap-5">
+          <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-navy-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-heading font-bold text-navy mb-2">Books</h2>
+            <p class="text-warm-gray mb-3">Browse my published works on Amazon.</p>
+            <a href="/books" class="text-gold-dark hover:text-navy font-semibold transition-colors text-lg">
+              View Books &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

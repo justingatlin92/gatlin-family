@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <!-- Post Header -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <time class="text-gold-light text-sm font-medium">
+        {new Date(post.data.date).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
+      </time>
+      <h1 class="text-3xl md:text-4xl font-heading font-bold text-white mt-3">{post.data.title}</h1>
+      <p class="text-gray-300 mt-3">by {post.data.author}</p>
+    </div>
+  </section>
+
+  <!-- Post Content -->
+  <section class="py-16 bg-cream">
+    <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-lg prose-headings:font-heading prose-headings:text-navy prose-a:text-gold-dark hover:prose-a:text-navy prose-strong:text-navy">
+      <Content />
+    </article>
+
+    <!-- Back to blog -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-cream-dark">
+      <a href="/blog" class="text-gold-dark hover:text-navy font-semibold transition-colors">
+        &larr; Back to all posts
+      </a>
+    </div>
+  </section>
+</BaseLayout>

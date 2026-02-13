@@ -1,0 +1,52 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-navy-dark text-gray-300">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div>
+        <h3 class="font-heading text-lg font-bold text-gold mb-3">The Gatlin Family</h3>
+        <p class="text-sm text-gray-400">Pastor, Author, and Teacher</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-medium text-white mb-3">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="hover:text-gold transition-colors">About</a></li>
+          <li><a href="/books" class="hover:text-gold transition-colors">Books</a></li>
+          <li><a href="/blog" class="hover:text-gold transition-colors">Blog</a></li>
+          <li><a href="/contact" class="hover:text-gold transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <h4 class="font-medium text-white mb-3">Connect</h4>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="https://www.youtube.com/@justgat" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">
+              YouTube
+            </a>
+          </li>
+          <li>
+            <a href="https://alvinmbc.com" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">
+              Alvin Missionary Baptist Church
+            </a>
+          </li>
+          <li>
+            <a href="mailto:justin@alvinmbc.com" class="hover:text-gold transition-colors">
+              justin@alvinmbc.com
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+      <p>&copy; {currentYear} Justin Gatlin. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

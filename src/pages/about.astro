@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="Learn more about Justin Gatlin — pastor, author, and teacher.">
+  <!-- Page Header -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-heading font-bold text-white mb-4">About Justin</h1>
+      <p class="text-gold-light text-lg">Pastor, Author, and Teacher</p>
+    </div>
+  </section>
+
+  <!-- Bio Section -->
+  <section class="py-16 bg-cream">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row gap-10 items-start">
+        <!-- Photo -->
+        <div class="flex-shrink-0 mx-auto md:mx-0">
+          <img
+            src="/images/JustinAndColleen.jpg"
+            alt="Justin and Colleen Gatlin"
+            class="w-72 h-auto rounded-xl shadow-lg"
+          />
+          <p class="text-sm text-warm-gray-light text-center mt-3 italic">Justin &amp; Colleen Gatlin</p>
+        </div>
+
+        <!-- Bio Text -->
+        <div class="space-y-5 text-lg leading-relaxed">
+          <p>
+            Justin Gatlin serves as the pastor of
+            <a href="https://alvinmbc.com" target="_blank" rel="noopener noreferrer" class="text-gold-dark hover:text-navy font-semibold transition-colors">Alvin Missionary Baptist Church</a>,
+            where the congregation lives by the motto <em>"Together We Serve for the Glory of God."</em>
+          </p>
+          <p>
+            As an author, Justin has written to help believers better understand the Bible and the rich history of the Christian faith. His books — <em>Journey Through the Old Testament</em> and <em>A Brief Walk Through Christian History</em> — are part of a series edited by Thom S. Rainer and are designed to be accessible guides for Christians at every stage of their journey.
+          </p>
+          <p>
+            Justin is passionate about teaching God's Word and making it approachable for everyone. Whether through Sunday sermons, his YouTube channel, or the written page, his goal is to help people grow deeper in their faith.
+          </p>
+          <p>
+            He and his wife Colleen share a love for life, ministry, and adventure together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ministry & Links -->
+  <section class="py-16 bg-cream-dark">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-heading font-bold text-center mb-10 text-navy">Ministry &amp; Work</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="https://alvinmbc.com" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6 flex items-center gap-4">
+          <div class="w-12 h-12 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21" /></svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-navy">Alvin Missionary Baptist Church</h3>
+            <p class="text-sm text-warm-gray-light">alvinmbc.com</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/@justgat" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6 flex items-center gap-4">
+          <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-navy">YouTube Channel</h3>
+            <p class="text-sm text-warm-gray-light">Sermons, Teaching &amp; Logos Training</p>
+          </div>
+        </a>
+        <a href="/books" class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6 flex items-center gap-4">
+          <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-navy-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-navy">Published Books</h3>
+            <p class="text-sm text-warm-gray-light">Available on Amazon</p>
+          </div>
+        </a>
+        <a href="mailto:justin@alvinmbc.com" class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6 flex items-center gap-4">
+          <div class="w-12 h-12 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-navy">Get in Touch</h3>
+            <p class="text-sm text-warm-gray-light">justin@alvinmbc.com</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
