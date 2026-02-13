@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const studies = (await getCollection('studies')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+// Collect all unique tags
+const allTags = [...new Set(studies.flatMap(s => s.data.tags))].sort();
+---
+
+<BaseLayout title="Studies" description="Bible studies, sermon follow-ups, and teaching resources by Justin Gatlin.">
+  <!-- Page Header -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-heading font-bold text-white mb-4">Studies</h1>
+      <p class="text-gold-light text-lg">Bible studies, sermon follow-ups, and teaching resources.</p>
+    </div>
+  </section>
+
+  <!-- Tag Filter -->
+  {allTags.length > 0 && (
+    <section class="bg-cream border-b border-cream-dark">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex flex-wrap gap-2 items-center justify-center">
+          <span class="text-sm text-warm-gray-light font-medium mr-2">Filter:</span>
+          <a
+            href="/studies"
+            class="px-3 py-1 rounded-full text-sm font-medium bg-navy text-white transition-colors"
+          >
+            All
+          </a>
+          {allTags.map(tag => (
+            <a
+              href={`/studies/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}
+              class="px-3 py-1 rounded-full text-sm font-medium bg-white text-navy border border-cream-dark hover:bg-gold hover:text-navy-dark hover:border-gold transition-colors"
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Studies List -->
+  <section class="py-16 bg-cream">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      {studies.length === 0 ? (
+        <p class="text-center text-warm-gray-light text-lg">Studies coming soon!</p>
+      ) : (
+        <div class="space-y-8">
+          {studies.map(study => (
+            <article class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-8">
+              <a href={`/studies/${study.id}`} class="block group">
+                <time class="text-sm text-gold-dark font-medium">
+                  {new Date(study.data.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </time>
+                <h2 class="text-2xl font-heading font-bold text-navy mt-2 mb-3 group-hover:text-gold-dark transition-colors">
+                  {study.data.title}
+                </h2>
+                <p class="text-warm-gray leading-relaxed">
+                  {study.data.description}
+                </p>
+                {study.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    {study.data.tags.map(tag => (
+                      <span class="px-2 py-0.5 rounded-full text-xs font-medium bg-cream text-navy border border-cream-dark">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <span class="inline-block mt-4 text-gold-dark font-semibold text-sm group-hover:text-navy transition-colors">
+                  View study &rarr;
+                </span>
+              </a>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

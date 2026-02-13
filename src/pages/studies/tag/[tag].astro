@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const studies = await getCollection('studies');
+  const allTags = [...new Set(studies.flatMap(s => s.data.tags))];
+
+  return allTags.map(tag => ({
+    params: { tag: tag.toLowerCase().replace(/\s+/g, '-') },
+    props: {
+      tag,
+      studies: studies
+        .filter(s => s.data.tags.includes(tag))
+        .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()),
+    },
+  }));
+}
+
+const { tag, studies } = Astro.props;
+
+// Get all tags for the filter bar
+const allStudies = await getCollection('studies');
+const allTags = [...new Set(allStudies.flatMap(s => s.data.tags))].sort();
+---
+
+<BaseLayout title={`${tag} — Studies`} description={`Studies tagged "${tag}" by Justin Gatlin.`}>
+  <!-- Page Header -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-heading font-bold text-white mb-4">{tag}</h1>
+      <p class="text-gold-light text-lg">{studies.length} {studies.length === 1 ? 'study' : 'studies'}</p>
+    </div>
+  </section>
+
+  <!-- Tag Filter -->
+  <section class="bg-cream border-b border-cream-dark">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex flex-wrap gap-2 items-center justify-center">
+        <span class="text-sm text-warm-gray-light font-medium mr-2">Filter:</span>
+        <a
+          href="/studies"
+          class="px-3 py-1 rounded-full text-sm font-medium bg-white text-navy border border-cream-dark hover:bg-gold hover:text-navy-dark hover:border-gold transition-colors"
+        >
+          All
+        </a>
+        {allTags.map(t => (
+          <a
+            href={`/studies/tag/${t.toLowerCase().replace(/\s+/g, '-')}`}
+            class:list={[
+              'px-3 py-1 rounded-full text-sm font-medium transition-colors',
+              t === tag
+                ? 'bg-navy text-white'
+                : 'bg-white text-navy border border-cream-dark hover:bg-gold hover:text-navy-dark hover:border-gold'
+            ]}
+          >
+            {t}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Studies List -->
+  <section class="py-16 bg-cream">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-8">
+        {studies.map(study => (
+          <article class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-8">
+            <a href={`/studies/${study.id}`} class="block group">
+              <time class="text-sm text-gold-dark font-medium">
+                {new Date(study.data.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+              <h2 class="text-2xl font-heading font-bold text-navy mt-2 mb-3 group-hover:text-gold-dark transition-colors">
+                {study.data.title}
+              </h2>
+              <p class="text-warm-gray leading-relaxed">
+                {study.data.description}
+              </p>
+              {study.data.tags.length > 0 && (
+                <div class="flex flex-wrap gap-2 mt-4">
+                  {study.data.tags.map(t => (
+                    <span class:list={[
+                      'px-2 py-0.5 rounded-full text-xs font-medium border',
+                      t === tag
+                        ? 'bg-navy text-white border-navy'
+                        : 'bg-cream text-navy border-cream-dark'
+                    ]}>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <span class="inline-block mt-4 text-gold-dark font-semibold text-sm group-hover:text-navy transition-colors">
+                View study &rarr;
+              </span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

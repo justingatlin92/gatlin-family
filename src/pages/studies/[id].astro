@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import YouTube from '../../components/YouTube.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const studies = await getCollection('studies');
+  return studies.map(study => ({
+    params: { id: study.id },
+    props: { study },
+  }));
+}
+
+const { study } = Astro.props;
+const { Content } = await render(study);
+---
+
+<BaseLayout title={study.data.title} description={study.data.description}>
+  <!-- Post Header -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <time class="text-gold-light text-sm font-medium">
+        {new Date(study.data.date).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
+      </time>
+      <h1 class="text-3xl md:text-4xl font-heading font-bold text-white mt-3">{study.data.title}</h1>
+      <p class="text-gray-300 mt-3">by {study.data.author}</p>
+      {study.data.tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mt-4 justify-center">
+          {study.data.tags.map(tag => (
+            <a
+              href={`/studies/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}
+              class="px-3 py-1 rounded-full text-xs font-medium bg-navy-light text-gold-light hover:bg-gold hover:text-navy-dark transition-colors"
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- YouTube Embed -->
+  {study.data.youtube && (
+    <section class="bg-cream pt-12">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <YouTube url={study.data.youtube} title={study.data.title} />
+      </div>
+    </section>
+  )}
+
+  <!-- Post Content -->
+  <section class="py-16 bg-cream">
+    <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-lg prose-headings:font-heading prose-headings:text-navy prose-a:text-gold-dark hover:prose-a:text-navy prose-strong:text-navy">
+      <Content />
+    </article>
+
+    <!-- Back to studies -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-cream-dark">
+      <a href="/studies" class="text-gold-dark hover:text-navy font-semibold transition-colors">
+        &larr; Back to all studies
+      </a>
+    </div>
+  </section>
+</BaseLayout>
